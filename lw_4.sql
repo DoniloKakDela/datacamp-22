@@ -1,13 +1,10 @@
-/* Task 1 Step 1 */
-
-CREATE TABLE t2 AS
-SELECT TRUNC(rownum / 100) id, RPAD( rownum,100) t_pad
-FROM dual
-CONNECT BY rownum < 100000;
-
-/* Step 2 */
-
-CREATE INDEX t2_idx1 ON t2 (id);
-
-/* Step 3 */
-
+CREATE TABLE emp
+( empno NUMBER PRIMARY KEY,
+ename VARCHAR2(10),
+job VARCHAR2(9),
+mgr NUMBER,
+hiredate DATE,
+sal NUMBER,
+comm NUMBER,
+deptno NUMBER(2) REFERENCES dept(deptno))
+CLUSTER emp_dept_cluster (deptno);
