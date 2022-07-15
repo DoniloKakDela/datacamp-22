@@ -27,7 +27,6 @@ DROP TABLE t;
 CREATE TABLE t (x INT PRIMARY KEY, e CLOB, z BLOB);
 
 DROP TABLE t;
-
 /*Step 2 */
 
 SELECT segment_name, segment_type
